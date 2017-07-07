@@ -1,0 +1,40 @@
+header#display{
+  background: var(--dg-color) url("assets/img/banners_samples/banner_home.png") no-repeat top center
+}
+header#agency_display{
+  background: var(--dg-color) url("assets/img/banners_samples/banner_agencies.png") no-repeat top center
+}
+header#agency_display h3,
+header#agency_display p{
+  font-family: var(--title-font)
+}
+.home_blog_post{
+  border: 1px solid var(--main-color);
+  padding: 30px;
+  margin-bottom: 30px
+}
+.home_blog_post h3{
+  font-size: 22px;
+  font-weight: bold;
+  margin:0 0 5px;
+}
+.home_blog_post em{
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  margin:0 0 20px;
+}
+.home_blog_post p{
+  margin-bottom: 20px
+}
+
+/*** Tablets and Desktops ***/
+@media screen and (min-width: 768px) {
+  header#agency_display h3{
+    font-size: 100px
+  }
+  header#agency_display p{
+    font-size: 25px;
+    font-weight: normal
+  }
+}

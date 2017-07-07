@@ -1,0 +1,289 @@
+html, body {
+  font-size: 16px;
+  font-family: var(--text-font)
+}
+html, body, #wrapper{
+  min-height: 100%
+}
+#wrapper{
+  overflow: hidden
+}
+h1.dh1{
+  font-size: 84px;
+  font-family: var(--title-font);
+  color:#FFF;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  margin-top: 40px
+}
+h1.dh1::after{
+  content: attr(data-shadow);
+  position: absolute;
+  bottom:0;
+  left:0;
+  font-size: 56px;
+  line-height: 74px;
+  color:var(--main-color)
+}
+h1.dh1.aos-animate{
+  -webkit-animation: var(--animate-title);
+  -moz-animation: var(--animate-title);
+  animation: var(--animate-title);
+}
+section h2 {
+  font-size:22px;
+  font-family: var(--subtile-font);
+  font-weight: normal
+}
+.taan nav.navbar li a, header#display h2{
+  font-family: var(--title-font)
+}
+p {
+  font-family: var(--text-font);
+  font-size: 18px;
+  line-height: 22px
+}
+a, p > a{
+  color: var(--main-color);
+  text-decoration: none
+}
+a:hover, p > a:hover,a:focus, p > a:focus{
+  color: var(--main-color);
+  text-decoration: underline
+}
+.taan-btn{
+  display: inline-block;
+  font-family: var(--title-font);
+  font-size: 16px;
+  padding: 0 15px;
+  line-height: 18px
+}
+.taan-btn:hover,.taan-btn:focus{
+  text-decoration: none
+}
+.taan-btn.taan-btn-default{
+  color: var(--lg-color);
+  background-color: var(--main-color)
+}
+.taan-btn.taan-btn-default.taan-btn-reverse{
+  color: var(--main-color);
+  background-color: var(--lg-color)
+}
+nav.navbar {
+  margin: 0;
+  border: 0 none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0
+}
+.taan-tabs{
+  margin: 40px 0
+}
+.taan-tabs ul.nav.nav-justified{}
+.taan-tabs ul.nav.nav-justified li{}
+.taan-tabs ul.nav.nav-justified li.active{}
+.taan-tabs ul.nav.nav-justified li a{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border-bottom-color: var(--dg-color);
+  background-color: var(--dg-color);
+  color:#FFFFFF;
+  font-family: var(--title-font);
+  font-size:20px;
+  white-space: nowrap;
+  font-weight: normal;
+  -webkit-transition: all .4s ease-out;
+  -moz-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  transition: all .4s ease-out
+}
+.taan-tabs ul.nav.nav-justified li:hover a,
+.taan-tabs ul.nav.nav-justified li:focus a{
+  border-color: var(--main-color);
+  background-color: var(--main-color)
+}
+.taan-tabs ul.nav.nav-justified li.active a,
+.taan-tabs ul.nav.nav-justified li.active:hover a,
+.taan-tabs ul.nav.nav-justified li.active:focus a{
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+  cursor: default
+}
+.taan-tabs .tab-content .tab-pane{
+  padding: 30px 0;
+  background-color: var(--main-color)
+}
+.taan-tabs .tab-content .tab-pane h3{
+  margin-top:0
+}
+.taan-tabs .tab-content .tab-pane h3,
+.taan-tabs .tab-content .tab-pane h4,
+.taan-tabs .tab-content .tab-pane p,
+.taan-tabs .tab-content .tab-pane .pull-right img + em,
+.taan-tabs .tab-content .tab-pane ul{
+  color:#FFF;
+  padding-bottom:20px
+}
+.taan-tabs .tab-content .tab-pane h4{
+  font-size: 16px;
+  font-weight: bold
+}
+.taan-tabs .tab-content .tab-pane .pull-right img{
+  width: 100%
+}
+.taan-tabs .tab-content .tab-pane .pull-right img + em{
+  font-size: 14px;
+  display: block;
+  margin: 15px 0;
+  font-style: normal
+}
+header#display,
+header#agency_display{
+  position: relative;
+  max-height: 455px;
+  margin-bottom:40px;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+header#agency_display{
+  max-height: 299px
+}
+header#display .display_title,
+header#agency_display .display_title{
+  margin:0;
+  background-color: rgba(var(--main-rgb-color), .8);
+  max-height:245px;
+  color: #FFFFFF;
+  text-transform: uppercase
+}
+header#display .display_title h2{
+  font-size: 35px
+}
+header#display .display_title p{
+  font-size: 20px
+}
+.taan > footer{
+  padding: 30px 0 15px;
+  text-align: center;
+  margin: 0;
+  background-color: #FFF;
+  font-size: 14px;position: relative
+}
+.taan > footer::before{
+  content: " ";
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  -webkit-transition: all 1.5s ease-out;
+  -moz-transition: all 1.5s ease-out;
+  -o-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out
+}
+/*
+.taan > footer.aos-animate::before{
+  left: 0;
+  width: 100%
+}
+*/
+.taan > footer p.copy{
+  font-size: 14px;
+  color: #333
+}
+.taan > footer > p > a{
+  display: inline-block;
+  width:45px;
+  height: 45px;
+  margin: 0 15px
+}
+.taan > footer > p > a > img{
+  width: 35px;
+  height: 35px
+}
+
+/*** Tablets and Desktops ***/
+@media screen and (min-width: 768px) {
+  .taan nav.navbar {
+    position: fixed;
+    background-color: #FFF!important;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    width: 100%;
+    max-height: 108px;
+    background: transparent;
+    z-index: 12;
+    -webkit-box-shadow: 0 0 7px #555;
+    -moz-box-shadow: 0 0 7px #555;
+    box-shadow: 0 0 7px #555
+  }
+  .taan nav.navbar a.navbar-brand {
+    width: 95px;/* por 79px*/
+    padding: 0;
+    margin: 10px 0;
+  }
+  .taan nav.navbar li:hover a, .taan nav.navbar li:focus a, .taan nav.navbar li.active a{
+    background-color: transparent!important;
+    color:var(--dg-color)!important
+  }
+  .taan nav.navbar li.active a, .taan nav.navbar li.active:hover a, .taan nav.navbar li.active:focus a{
+    cursor: default;
+  }
+  .taan nav.navbar li a{
+    font-size: 24px;
+    text-transform: uppercase;
+    color:var(--dg-color);
+    background-color: transparent;
+    overflow: hidden;
+    display:inline-block;
+    position: relative;
+    padding: 0;
+    margin: 40px 20px;
+    line-height: 30px
+  }
+  .taan nav.navbar li a::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    max-height: 0;
+    color: var(--main-color);
+    content: attr(data-hover);
+    -webkit-transition: max-height .3s;
+    -moz-transition: max-height .3s;
+    transition: max-height .3s
+  }
+  .taan nav.navbar li a:hover::before, .taan nav.navbar li a:focus::before, .taan nav.navbar li.active a::before {
+    max-height: 100%
+  }
+  header#display{
+    height: 455px;
+    padding: 105px 0
+  }
+  header#display .display_title{
+    padding: 40px 10%
+  }
+  header#display .display_title h2{
+    font-size: 56px;
+    line-height: 48px
+  }
+  header#agency_display{
+    height: 299px;
+    padding: 65px 0
+  }
+  header#agency_display .display_title h3{
+    margin-bottom:0
+  }
+  header#agency_display .display_title p{
+    margin-top:0
+  }
+}

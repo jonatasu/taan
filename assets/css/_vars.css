@@ -1,0 +1,24 @@
+:root {
+  --main-color: #BA0031;
+  --main-rgb-color: 186, 0, 49; /* #BA0031 */
+  --dg-color: #3E3E3E;
+  --lg-color: #E8E8E8;
+  --lgh-color: #C9C9C9;
+  --title-font: "alternate-gothic-no-1-d", sans-serif;
+  --subtitle-font: "proxima-nova", sans-serif;
+  --text-font: "proxima-nova", sans-serif;
+  --animate-title: default_title 2s 1s linear 1 normal forwards;
+}
+
+@-webkit-keyframes default_title {
+  from{ color: #FFF }
+  to{ color: var(--lg-color) }
+}
+@-moz-keyframes default_title {
+  from{ color: #FFF }
+  to{ color: var(--lg-color) }
+}
+@keyframes default_title {
+  from{ color: #FFF }
+  to{ color: var(--lg-color) }
+}
