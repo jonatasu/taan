@@ -54,20 +54,27 @@ a:hover, p > a:hover,a:focus, p > a:focus{
 .taan-btn{
   display: inline-block;
   font-family: var(--title-font);
-  font-size: 16px;
-  padding: 0 15px;
-  line-height: 18px
+  font-size: 20px;
+  padding: 2px 15px 0;
+  line-height: 18px;
+  border: 2px solid;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear
 }
 .taan-btn:hover,.taan-btn:focus{
   text-decoration: none
 }
-.taan-btn.taan-btn-default{
+.taan-btn.taan-btn-default,.taan-btn.taan-btn-reverse:hover,.taan-btn.taan-btn-reverse:focus{
   color: var(--lg-color);
-  background-color: var(--main-color)
+  background-color: var(--main-color);
+  border-color: var(--lg-color)
 }
-.taan-btn.taan-btn-default.taan-btn-reverse{
+.taan-btn.taan-btn-reverse,.taan-btn.taan-btn-default:hover,.taan-btn.taan-btn-default:focus{
   color: var(--main-color);
-  background-color: var(--lg-color)
+  background-color: var(--lg-color);
+  border-color: transparent
 }
 nav.navbar {
   margin: 0;
@@ -83,16 +90,18 @@ nav.navbar {
 .taan-tabs ul.nav.nav-justified li{}
 .taan-tabs ul.nav.nav-justified li.active{}
 .taan-tabs ul.nav.nav-justified li a{
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
   border-bottom-color: var(--dg-color);
   background-color: var(--dg-color);
   color:#FFFFFF;
   font-family: var(--title-font);
-  font-size:20px;
+  font-size:24px;
+  padding: 20px 15px 15px;
   white-space: nowrap;
   font-weight: normal;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   -webkit-transition: all .4s ease-out;
   -moz-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
@@ -111,7 +120,7 @@ nav.navbar {
   cursor: default
 }
 .taan-tabs .tab-content .tab-pane{
-  padding: 30px 0;
+  padding: 30px;
   background-color: var(--main-color)
 }
 .taan-tabs .tab-content .tab-pane h3{
@@ -178,34 +187,31 @@ header#display .display_title p{
   content: " ";
   position: absolute;
   top:0;
-  left:0;
-  width: 100%;
+  left:50%;
+  width: 0;
   height: 2px;
   background-color: var(--main-color);
-  -webkit-transition: all 1.5s ease-out;
-  -moz-transition: all 1.5s ease-out;
-  -o-transition: all 1.5s ease-out;
-  transition: all 1.5s ease-out
+  -webkit-transition: all 1.5s .4s ease-out;
+  -moz-transition: all 1.5s .4s ease-out;
+  -o-transition: all 1.5s .4s ease-out;
+  transition: all 1.5s .4s ease-out
 }
-/*
 .taan > footer.aos-animate::before{
-  left: 0;
-  width: 100%
+  left:0;
+  width: 100%;
 }
-*/
 .taan > footer p.copy{
   font-size: 14px;
   color: #333
 }
 .taan > footer > p > a{
   display: inline-block;
-  width:45px;
-  height: 45px;
+  width:35px;
+  height: 35px;
   margin: 0 15px
 }
 .taan > footer > p > a > img{
-  width: 35px;
-  height: 35px
+  width: 100%
 }
 
 /*** Tablets and Desktops ***/
@@ -224,6 +230,12 @@ header#display .display_title p{
     -webkit-box-shadow: 0 0 7px #555;
     -moz-box-shadow: 0 0 7px #555;
     box-shadow: 0 0 7px #555
+  }
+  .taan nav.navbar .navbar-header{
+    padding-left: 25px
+  }
+  .taan #navbar {
+    padding-right: 25px
   }
   .taan nav.navbar a.navbar-brand {
     width: 95px;/* por 79px*/
@@ -285,5 +297,8 @@ header#display .display_title p{
   }
   header#agency_display .display_title p{
     margin-top:0
+  }
+  #wrapper > section > .container {
+    padding: 0 60px
   }
 }

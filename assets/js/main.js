@@ -1,5 +1,16 @@
 // Global variables
 var navbarHeight = $(".navbar-taan").height();
+var wrapperHeight = $("#wrapper").height();
+
+function initAOS(){
+  // Iniate the Animate On Scroll plugin
+  AOS.init({
+    offset: 100,
+    duration: 600,
+    easing: 'ease-in-sine',
+    delay: 100
+  });
+}
 
 // Set "#wrapper" TOP padding as navbar's height
 $("#wrapper").css("padding-top", navbarHeight+"px");
@@ -20,11 +31,13 @@ $(document).ready(function(){
   $(".taan-tabs .tab-pane ul").each(function(){ $(this).attr("data-aos","fade-up"); });
   $(".taan-tabs .tab-pane img").each(function(){ $(this).attr("data-aos","fade-in"); });
 
-  // Iniate the Animate On Scroll plugin
-  AOS.init({
-    offset: 100,
-    duration: 600,
-    easing: 'ease-in-sine',
-    delay: 100
-  });
+  initAOS();
+});
+$(window).scroll(function(){
+
+  // Calls AOS again if content height's changes
+  if(wrapperHeight !== $("#wrapper").height()){
+    wrapperHeight = $("#wrapper").height();
+    initAOS();
+  }
 });
