@@ -6,7 +6,8 @@ html, body, #wrapper{
   min-height: 100%
 }
 #wrapper{
-  overflow: hidden
+  overflow: hidden;
+  padding-bottom: 50px
 }
 h1.dh1{
   font-size: 84px;
@@ -86,8 +87,6 @@ nav.navbar {
 .taan-tabs{
   margin: 40px 0
 }
-.taan-tabs ul.nav.nav-justified{}
-.taan-tabs ul.nav.nav-justified li{}
 .taan-tabs ul.nav.nav-justified li.active{}
 .taan-tabs ul.nav.nav-justified li a{
   border-bottom-color: var(--dg-color);
@@ -253,6 +252,27 @@ header#display .display_title p{
 }
 .taan form :-moz-placeholder { /* Firefox 18- */
   color: var(--dg-color);
+}
+.taan .pagination li.disabled{
+  opacity: .4
+}
+.taan .pagination li.active a,
+.taan .pagination li a:hover,
+.taan .pagination li a[aria-label=Previous],
+.taan .pagination li a[aria-label=Next]{
+  font-weight: bold;
+  background-color: #FFF;
+  color: var(--main-color)
+}
+.taan .pagination li a,
+.taan .pagination li span{
+  font-family: var(--subtitle-font);
+  font-size: 15px;
+  color: var(--main-color);
+  border: 0 none
+}
+.taan .pagination li span:hover{
+  background-color: #FFF;
 }
 
 /*** Tablets and Desktops ***/
