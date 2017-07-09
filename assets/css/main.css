@@ -5,6 +5,11 @@ html, body {
 html, body, #wrapper{
   min-height: 100%
 }
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 #wrapper{
   overflow: hidden;
   padding-bottom: 50px
@@ -15,7 +20,8 @@ h1.dh1{
   color:#FFF;
   margin-bottom: 0;
   text-transform: uppercase;
-  margin-top: 40px
+  margin-top: 40px;
+  position:relative
 }
 h1.dh1::after{
   content: attr(data-shadow);
@@ -25,6 +31,12 @@ h1.dh1::after{
   font-size: 56px;
   line-height: 74px;
   color:var(--main-color)
+}
+header#display h1.dh1{
+  color: rgba(var(--lgh-rgb-color), .2)
+}
+header#display h1.dh1::after{
+  color:#FFF
 }
 h1.dh1.aos-animate{
   -webkit-animation: var(--animate-title);
@@ -212,6 +224,9 @@ header#display .display_title p{
 .taan > footer > p > a > img{
   width: 100%
 }
+.taan form .form-group {
+  margin-bottom: 11px
+}
 .taan form input,
 .taan form select,
 .taan form textarea,
@@ -224,19 +239,17 @@ header#display .display_title p{
 }
 .taan form input,
 .taan form select,
-.taan form textarea{
-  padding: 0 5px;
-}
-.taan form input,
-.taan form select,
 .taan form button{
   height: 26px
 }
-.taan form input{
+.taan form input,
+.taan form select,
+.taan form textarea{
   border:2px solid var(--main-color);
   color: var(--main-color);
   font-family: var(--title-font);
   text-transform: uppercase;
+  padding: 0 5px
 }
 .taan form input:focus{
   border-color: var(--dg-color)
