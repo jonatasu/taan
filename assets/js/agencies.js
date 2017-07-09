@@ -4,7 +4,7 @@ $(".box_item").on("mouseover", "h2 > a", function(){
   $(this).parents(".box_item").removeClass("hover");
 });
 $(".box_item ul li").each(function(){
-  if($(this).outerWidth() < $(this).find("a").outerWidth()){
+  if($(this).outerWidth() < ($(this).find("a span").outerWidth() + 40)){
     $(this).append('<span class="etc">&nbsp;...</span>');
     console.log("appended");
   }
