@@ -312,7 +312,9 @@ h2.dh2.aos-animate::after,
 }
 #subnavbar{
   z-index:11;
-  background-color: var(--dg-color);
+  background-color: var(--dg-color)  
+}
+#subnavbar.affix-top{
   margin-top: -40px
 }
 #subnavbar li:not(:first-child){
