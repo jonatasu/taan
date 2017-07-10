@@ -1,33 +1,6 @@
 header#display{
   background: var(--dg-color) url("assets/img/banners_samples/banner_about.png") no-repeat top center
 }
-#subnavbar{
-  z-index:11;
-  background-color: var(--dg-color);
-}
-#subnavbar.affix{
--webkit-box-shadow: 0 0 7px #555;
--moz-box-shadow: 0 0 7px #555;
-box-shadow: 0 0 7px #555
-}
-#subnavbar.affix-top{
-  margin-top: -40px
-}
-#subnavbar li:not(:first-child){
-  border-left: 1px solid var(--lgh-color)
-}
-#subnavbar li a{
-  color: #FFF;
-  text-transform: uppercase;
-  font-family: var(--title-font);
-  font-size: 26px;
-  line-height: 24px;
-  background-color: var(--dg-color);
-  padding: 15px 15px 10px
-}
-#subnavbar li.active a{
-  background-color: var(--main-color)
-}
 .person{
   margin-bottom: 30px
 }

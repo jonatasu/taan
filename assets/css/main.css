@@ -252,7 +252,8 @@ h2.dh2.aos-animate::after,
 .taan form input,
 .taan form select,
 .taan form textarea,
-.taan form button{
+.taan form button,
+.taan-btn {
   font-size: 22px;
   text-transform: uppercase;
   -webkit-border-radius:0;
@@ -309,6 +310,154 @@ h2.dh2.aos-animate::after,
 .taan .pagination li span:hover{
   background-color: #FFF;
 }
+#subnavbar{
+  z-index:11;
+  background-color: var(--dg-color);
+  margin-top: -40px
+}
+#subnavbar li:not(:first-child){
+  border-left: 1px solid var(--lgh-color)
+}
+#subnavbar li a{
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: var(--title-font);
+  font-size: 29px;
+  line-height: 24px;
+  background-color: var(--dg-color);
+  padding: 15px 15px 10px
+}
+#subnavbar li.active a,
+#subnavbar li a:hover{
+  background-color: var(--main-color)
+}
+.box_item{
+  border: 1px solid transparent;
+  overflow: hidden;
+  padding: 20px 50px 20px 20px;
+  -webkit-transition: border .4s linear;
+  -moz-transition: border .4s linear;
+  -o-transition: border .4s linear;
+  transition: border .4s linear;
+}
+.box_item.hover.box_red{
+  border-color: var(--main-color)
+}
+.box_item h2,
+.box_item h2 a,
+.box_item h2 a span.resume{
+  color: var(--dg-color)
+}
+.box_item h2 a span.heading{
+  margin:25px 0;
+  font-size: 22px;
+  line-height: 24px;
+  white-space: nowrap
+}
+.box_item h2 a:hover,
+.box_item h2 a:focus{ text-decoration: none}
+.box_item h2 a span{
+  display:block
+}
+.box_item h2 a span.cover_img{
+  border: 1px solid transparent;
+  -webkit-transition: border .4s linear;
+  -moz-transition: border .4s linear;
+  -o-transition: border .4s linear;
+  transition: border .4s linear
+}
+.box_item h2 a span.cover_img img{
+  width: 100%
+}
+.box_item.hover.box_red h2 a span.cover_img,
+.box_item h2 a:hover span.cover_img{
+  border-color: var(--main-color)
+}
+.box_item h2 a span.resume{
+  font-size: 15px;
+  line-height: 18px;
+}
+.box_item ul{
+  margin: 30px 0;
+  list-style: none;
+  padding: 0
+}
+.box_item ul li{
+  padding: 0 15px 0 0;
+  margin:0;
+  list-style: none;
+  margin-bottom: 25px;
+  position: relative
+}
+.box_item ul li .etc{
+  background-color: #FFFFFF;
+  color: var(--main-color);
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  font-weight: bolder;
+  line-height: 35px;
+}
+.box_item ul li a,
+.box_item ul li a:visited{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--dg-color);
+  padding: 7px 15px 7px 50px
+}
+.box_item ul li a:hover,
+.box_item ul li a:focus{
+  text-decoration: none
+}
+.box_item ul li a::before,
+.box_item ul li a::after{
+  content: " ";
+  position:absolute
+}
+.box_item ul li a::before{
+  width:31px;
+  height:31px;
+  left:0;
+  top:50%;
+  margin-top:-15px;
+  background-repeat: no-repeat;
+  background-size: 31px 31px
+}
+.box_item ul li a.icon_web::before{
+  background-image: url("../img/url_ico.svg")
+}
+.box_item ul li a.icon_mail::before{
+  background-image: url("../img/mail_ico.svg")
+}
+.box_item ul li a.icon_fb::before{
+  background-image: url("../img/face_ico.svg")
+}
+.box_item ul li a.icon_in::before{
+  background-image: url("../img/in_ico.svg")
+}
+.box_item ul li a.icon_tw::before{
+  background-image: url("../img/twitter_ico.svg")
+}
+.box_item ul li a::after{
+  position: absolute;
+  left:0;
+  bottom:0;
+  width: 0;
+  height:1px;
+  border-bottom:1px solid var(--main-color);
+  -webkit-transition: width .8s ease-out;
+  -moz-transition: width .8s ease-out;
+  -o-transition: width .8s ease-out;
+  transition: width .8s ease-out;
+}
+.box_item ul li a:hover::after{
+  width: 100%
+}
+
 
 /*** Tablets and Desktops ***/
 @media screen and (min-width: 768px) {
