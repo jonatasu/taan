@@ -10,6 +10,15 @@ html, body, #wrapper{
   display: table;
   clear: both;
 }
+.zero_margin{
+  margin:0!important
+}
+.spc_top_1{
+  margin-top:15px
+}
+.spc_top_2{
+  margin-top:30px
+}
 #wrapper{
   overflow: hidden;
   padding-bottom: 50px
@@ -43,9 +52,15 @@ h1.dh1.aos-animate{
   -moz-animation: var(--animate-title);
   animation: var(--animate-title);
 }
+h2.dh2{
+  font-size: 26px;
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  text-align: center
+}
 section h2 {
   font-size:22px;
-  font-family: var(--subtile-font);
+  font-family: var(--subtitle-font);
   font-weight: normal
 }
 .taan nav.navbar li a, header#display h2{
@@ -194,10 +209,10 @@ header#display .display_title p{
   background-color: #FFF;
   font-size: 14px;position: relative
 }
+h2.dh2::after,
 .taan > footer::before{
   content: " ";
   position: absolute;
-  top:0;
   left:50%;
   width: 0;
   height: 2px;
@@ -207,6 +222,13 @@ header#display .display_title p{
   -o-transition: all 1.5s .4s ease-out;
   transition: all 1.5s .4s ease-out
 }
+h2.dh2::after{
+  bottom:0
+}
+.taan > footer::before{
+  top:0
+}
+h2.dh2.aos-animate::after,
 .taan > footer.aos-animate::before{
   left:0;
   width: 100%;
