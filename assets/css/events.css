@@ -1,0 +1,14 @@
+header#display{
+  background: var(--dg-color) url("assets/img/banners_samples/banner_events.png") no-repeat top center
+}
+.box_item{
+  padding: 15px
+}
+.box_item h2 a span.heading{
+  margin:0 0 15px;
+  font-size: 21px;
+  line-height: 23px
+}
+.box_item h2 a span.cover_img{
+  border-color: var(--lgh-color)
+}
