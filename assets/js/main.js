@@ -27,7 +27,7 @@ $("html,body").on("click",".scrollit",function(e){
 
 $(document).ready(function(){
   // ADD "Animate On-Scroll" attributes on every "P" tag
-  $("section p").each(function(){ $(this).attr("data-aos","fade-up"); });
+  $("section h2, section p, section ul").each(function(){ $(this).attr("data-aos","fade-up"); });
   $(".taan-tabs .tab-pane ul").each(function(){ $(this).attr("data-aos","fade-up"); });
   $(".taan-tabs .tab-pane img").each(function(){ $(this).attr("data-aos","fade-in"); });
 
