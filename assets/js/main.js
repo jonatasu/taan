@@ -21,7 +21,7 @@ $(".taan nav.navbar li.active a").on("click", function(e){ e.preventDefault(); }
 
 // Prevents a click on ANCHOR buttons and scrolls direct to ANCHOR's place
 $("html,body").on("click",".scrollit",function(e){
-  e.preventDefault();
+  $($(this).attr("href")).length > 0 && e.preventDefault();
   $("html,body").animate({ scrollTop: ($($(this).attr("href")).offset().top - navbarHeight) }, 1300);
 });
 
