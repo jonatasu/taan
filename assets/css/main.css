@@ -347,36 +347,43 @@ h2.dh2.aos-animate::after,
   border-color: var(--main-color)
 }
 .box_item h2,
-.box_item h2 a,
-.box_item h2 a span.resume{
+.box_item h2 > a,
+.box_item h2 > a span.resume,
+.box_item h2 > .info,
+.box_item h2 > .info span.resume{
   color: var(--dg-color)
 }
-.box_item h2 a span.heading{
+.box_item h2 > a span.heading,
+.box_item h2 > .info span.heading{
   margin:25px 0;
   font-size: 22px;
   line-height: 24px;
   white-space: nowrap
 }
-.box_item h2 a:hover,
-.box_item h2 a:focus{ text-decoration: none}
-.box_item h2 a span{
+.box_item h2 > a:hover,
+.box_item h2 > a:focus{ text-decoration: none}
+.box_item h2 > a span,
+.box_item h2 > .info span{
   display:block
 }
-.box_item h2 a span.cover_img{
+.box_item h2 > a span.cover_img,
+.box_item h2 > .info span.cover_img{
   border: 1px solid transparent;
   -webkit-transition: border .4s linear;
   -moz-transition: border .4s linear;
   -o-transition: border .4s linear;
   transition: border .4s linear
 }
-.box_item h2 a span.cover_img img{
+.box_item h2 > a span.cover_img img,
+.box_item h2 > .info span.cover_img img{
   width: 100%
 }
-.box_item.hover.box_red h2 a span.cover_img,
-.box_item h2 a:hover span.cover_img{
+.box_item.hover.box_red h2 > a span.cover_img,
+.box_item h2 > a:hover span.cover_img{
   border-color: var(--main-color)
 }
-.box_item h2 a span.resume{
+.box_item h2 > a span.resume,
+.box_item h2 > .info span.resume{
   font-size: 15px;
   line-height: 18px;
 }
