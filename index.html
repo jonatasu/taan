@@ -30,9 +30,9 @@
             <img src="assets/img/taan-logo.svg" alt="logo of taan">
             <span class="sr-only">taan - Access to a world marketing expertise</span>
           </a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <button id="nav-icon4" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
             <span class="sr-only">Show/hide Menu</span>
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            <span class="icon-bar bar_1"></span><span class="icon-bar bar_2"></span><span class="icon-bar bar_3"></span>
           </button>
         </div>
 
@@ -71,18 +71,18 @@
           <div class="display_title" data-aos="fade-in" data-aos-delay="400">
             <div class="container">
               <div class="row text-center">
-                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-xs-4" data-aos="fade-up" data-aos-delay="500">
                   <h3>32</h3>
                   <p>Countries</p>
                 </div>
-                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="col-xs-4" data-aos="fade-up" data-aos-delay="600">
                   <h3>67</h3>
                   <p>Cities worldwide</p>
                   <p>
                     <br><a href="#" title="Search for an agency" class="taan-btn taan-btn-reverse">Find</a><br>
                   </p>
                 </div>
-                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="col-xs-4" data-aos="fade-up" data-aos-delay="700">
                   <h3>51</h3>
                   <p>Member companies</p>
                 </div>
@@ -102,7 +102,7 @@
           <p>Taan makes each of its members a more effective chief executive, a leader more fully in control of managing their agency’s future. That’s the power of the Taan group dynamic.</p>
         </div>
         <div class="taan-tabs">
-          <ul class="nav nav-tabs nav-justified" role="tablist">
+          <ul class="nav nav-tabs nav-justified hidden-xs" role="tablist">
             <li role="presentation" class="active"><a href="#benefits" aria-controls="benefits" role="tab" data-toggle="tab">Benefits</a></li>
             <li role="presentation"><a href="#international-capabilities" aria-controls="international-capabilities" role="tab" data-toggle="tab">International capabilities</a></li>
             <li role="presentation"><a href="#network-opportunities" aria-controls="network-opportunities" role="tab" data-toggle="tab">Network opportunities</a></li>
@@ -111,6 +111,19 @@
             <li role="presentation"><a href="#membership-qualifications" aria-controls="membership-qualifications" role="tab" data-toggle="tab">Membership qualifications</a></li>
             <li role="presentation"><a href="#membership-applications" aria-controls="membership-applications" role="tab" data-toggle="tab">Membership applications</a></li>
           </ul>
+          <div class="mobile_tabs visible-xs">
+            <div class="select-wrapper">
+              <select name="membership_mobile_tabs" id="membership_mobile_tabs">
+                <option value="#benefits">Benefits</option>
+                <option value="#international-capabilities">International capabilities</option>
+                <option value="#network-opportunities">Network opportunities</option>
+                <option value="#legal-financial-services">Legal and financial services</option>
+                <option value="#information-services">Information services</option>
+                <option value="#membership-qualifications">Membership qualifications</option>
+                <option value="#membership-applications">Membership applications</option>
+              </select>
+            </div>
+          </div>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="benefits">
               <div class="container-fluid">
@@ -138,7 +151,6 @@
                   </ul>
                 </div>
               </div>
-
             </div>
             <div role="tabpanel" class="tab-pane fade" id="international-capabilities">
               <div class="container-fluid">

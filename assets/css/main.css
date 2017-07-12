@@ -250,7 +250,7 @@ h2.dh2.aos-animate::after,
   margin-bottom: 11px
 }
 .taan form input,
-.taan form select,
+.taan select,
 .taan form textarea,
 .taan form button,
 .taan-btn {
@@ -261,12 +261,12 @@ h2.dh2.aos-animate::after,
   border-radius:0
 }
 .taan form input,
-.taan form select,
+.taan select,
 .taan form button{
   height: 26px
 }
 .taan form input,
-.taan form select,
+.taan select,
 .taan form textarea{
   border:2px solid var(--main-color);
   color: var(--main-color);
@@ -274,24 +274,46 @@ h2.dh2.aos-animate::after,
   text-transform: uppercase;
   padding: 0 5px
 }
-.taan form input:focus{
-  border-color: var(--dg-color)
+.taan .select-wrapper{
+	position:relative;
+  margin-bottom: 1px
 }
-.taan form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: var(--dg-color);
+.taan .select-wrapper::before{
+	border-color:var(--dg-color);
+	background-color:var(--main-color);
+	content:"\f078";
+	font-family:"FontAwesome";
+	color:#FFFFFF;
+	display:inline-block;
+	position:absolute;
+	right:0;
+	top:0;
+  bottom:0;
+	pointer-events:none;
+	width:40px;
+	text-align:center;
+	line-height:26px;
 }
-.taan form ::-moz-placeholder { /* Firefox 19+ */
-  color: var(--dg-color);
+.taan .select-wrapper > select{
+  padding-right:40px;
+  width: 100%;
+  border: 2px solid var(--main-color);
+  color: var(--dg-color)
 }
-.taan form :-ms-input-placeholder { /* IE 10+ */
-  color: var(--dg-color);
+.taan .mobile_tabs .select-wrapper::before{
+  line-height: 45px
 }
-.taan form :-moz-placeholder { /* Firefox 18- */
-  color: var(--dg-color);
+.taan .mobile_tabs .select-wrapper > select{
+  font-size: 38px;
+  height: 45px
 }
-.taan .pagination li.disabled{
-  opacity: .4
-}
+
+.taan form input:focus{ border-color: var(--dg-color) }
+.taan form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: var(--dg-color); }
+.taan form ::-moz-placeholder { /* Firefox 19+ */ color: var(--dg-color); }
+.taan form :-ms-input-placeholder { /* IE 10+ */ color: var(--dg-color); }
+.taan form :-moz-placeholder { /* Firefox 18- */ color: var(--dg-color); }
+.taan .pagination li.disabled{ opacity: .4 }
 .taan .pagination li.active a,
 .taan .pagination li a:hover,
 .taan .pagination li a[aria-label=Previous],
@@ -562,6 +584,98 @@ h2.dh2.aos-animate::after,
 }
 /*** Smartphones ***/
 @media screen and (max-width: 767px){
+  .taan .navbar-default .navbar-brand{
+    width: 110px;
+    padding: 0;
+    height: 95px;
+    margin: 20px
+  }
+  .taan .navbar-default .navbar-toggle{
+    padding: 10px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 0;
+    border: 0 none;
+    position: relative;
+    width: 90px;
+    height: 71px
+  }
+  .taan .navbar-default .navbar-toggle.collapsed,
+  .taan .navbar-default .navbar-toggle:hover,
+  .taan .navbar-default .navbar-toggle:focus{
+    background-color: transparent;
+    border: 0 none
+  }
+  .taan .navbar-default .navbar-toggle .icon-bar{
+    background-color: var(--main-color);
+    width: 75px;
+    height: 7px;
+    border-radius: 0;
+    position:absolute;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out
+  }
+  .taan .navbar-toggle .icon-bar+.icon-bar{
+    margin-top: 10px
+  }
+  #nav-icon4 span:nth-child(2) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  #nav-icon4 span:nth-child(3) {
+    top: 14px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  #nav-icon4 span:nth-child(4) {
+    top: 36px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  #nav-icon4.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+  #nav-icon4.open span:nth-child(3) {
+    width: 0%;
+    opacity: 0;
+  }
+  #nav-icon4.open span:nth-child(4) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+  .taan nav.navbar li a{
+    color: var(--dg-color);
+    background-color: #FFF;
+    font-size: 30px;
+    line-height: 32px
+  }
+  .navbar-default .navbar-nav>.active>a,
+  .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav>.active>a:hover{
+    color: var(--lg-color);
+    background-color: var(--main-color)
+  }
+  header#display .display_title, header#agency_display .display_title{
+    padding: 5px 15px
+  }
   .taan form.form-inline .form-group{
     margin-right:20px
   }

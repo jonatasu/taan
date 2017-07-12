@@ -13,7 +13,7 @@ function initAOS(){
 }
 
 // Set "#wrapper" TOP padding as navbar's height
-$("#wrapper").css("padding-top", navbarHeight+"px");
+if( $(window).width() > 768 ){ $("#wrapper").css("padding-top", navbarHeight+"px"); }
 $("body > footer").css("margin-bottom", "-"+navbarHeight+"px");
 
 // Prevents a click on the active item on menu
@@ -24,6 +24,9 @@ $("html,body").on("click",".scrollit",function(e){
   $($(this).attr("href")).length > 0 && e.preventDefault();
   $("html,body").animate({ scrollTop: ($($(this).attr("href")).offset().top - navbarHeight) }, 1300);
 });
+
+// Toggles the class "open" on the "Hamburger menu" on every click
+$('#nav-icon4').on("click",function(){ $(this).toggleClass('open'); });
 
 $(document).ready(function(){
   // ADD "Animate On-Scroll" attributes on every "P" tag
