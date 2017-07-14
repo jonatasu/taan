@@ -1,5 +1,7 @@
+@import "base";
+
 header#display{
-  background: var(--dg-color) url("assets/img/banners_samples/banner_resources.png") no-repeat top center
+  background: @dg-color url("../img/banners_samples/banner_resources.png") no-repeat top center
 }
 .resource{
   margin:15px 0 30px;
@@ -17,7 +19,7 @@ header#display{
   color: #000;
 }
 .resource > p > a:hover{
-  color: var(--main-color)
+  color: @main-color
 }
 .resource > p > a,
 .resource > p > a:hover{

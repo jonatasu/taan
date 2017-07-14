@@ -1,6 +1,6 @@
 html, body {
   font-size: 16px;
-  font-family: var(--text-font)
+  font-family: @text-font
 }
 html, body, #wrapper{
   min-height: 100%
@@ -25,7 +25,7 @@ html, body, #wrapper{
 }
 h1.dh1{
   font-size: 84px;
-  font-family: var(--title-font);
+  font-family: @title-font;
   color:#FFF;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -39,115 +39,105 @@ h1.dh1::after{
   left:0;
   font-size: 56px;
   line-height: 74px;
-  color:var(--main-color)
+  color:@main-color
 }
 header#display h1.dh1{
-  color: rgba(var(--lgh-rgb-color), .2)
+  color: fade(@lgh-color, 20%)
 }
 header#display h1.dh1::after{
   color:#FFF
 }
 h1.dh1.aos-animate{
-  -webkit-animation: var(--animate-title);
-  -moz-animation: var(--animate-title);
-  animation: var(--animate-title);
+  -webkit-animation: @animate-title;
+  -moz-animation: @animate-title;
+  animation: @animate-title;
 }
 h2.dh2{
   font-size: 26px;
-  font-family: var(--title-font);
+  font-family: @title-font;
   text-transform: uppercase;
   text-align: center
 }
 section h2 {
   font-size:22px;
-  font-family: var(--subtitle-font);
+  font-family: @subtitle-font;
   font-weight: normal
 }
 .taan nav.navbar li a, header#display h2{
-  font-family: var(--title-font)
+  font-family: @title-font
 }
 p {
-  font-family: var(--text-font);
+  font-family: @text-font;
   font-size: 18px;
   line-height: 22px
 }
 a, p > a{
-  color: var(--main-color);
+  color: @main-color;
   text-decoration: none
 }
 a:hover, p > a:hover,a:focus, p > a:focus{
-  color: var(--main-color);
+  color: @main-color;
   text-decoration: underline
 }
 .taan-btn{
   display: inline-block;
-  font-family: var(--title-font);
+  font-family: @title-font;
   line-height: 24px;
   padding: 0 15px;
   border: 2px solid;
   text-transform: uppercase;
-  -webkit-transition: all .3s linear;
-  -moz-transition: all .3s linear;
-  -o-transition: all .3s linear;
-  transition: all .3s linear
+  .transitions(all .3s linear)
 }
 .taan-btn:hover,.taan-btn:focus{
   text-decoration: none
 }
 .taan-btn.taan-btn-default,.taan-btn.taan-btn-reverse:hover,.taan-btn.taan-btn-reverse:focus{
-  color: var(--lg-color);
-  background-color: var(--main-color);
-  border-color: var(--main-color)
+  color: @lg-color;
+  background-color: @main-color;
+  border-color: @main-color
 }
 .taan-btn.taan-btn-reverse,.taan-btn.taan-btn-default:hover,.taan-btn.taan-btn-default:focus{
-  color: var(--main-color);
-  background-color: var(--lg-color);
-  border-color: var(--main-color)
+  color: @main-color;
+  background-color: @lg-color;
+  border-color: @main-color
 }
 nav.navbar {
   margin: 0;
   border: 0 none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0
+  .round-borders(0)
 }
 .taan-tabs{
   margin: 40px 0
 }
 .taan-tabs ul.nav.nav-justified li.active{}
 .taan-tabs ul.nav.nav-justified li a{
-  border-bottom-color: var(--dg-color);
-  background-color: var(--dg-color);
+  border-bottom-color: @dg-color;
+  background-color: @dg-color;
   color:#FFFFFF;
-  font-family: var(--title-font);
+  font-family: @title-font;
   font-size:24px;
   padding: 20px 15px 15px;
   white-space: nowrap;
   font-weight: normal;
   text-transform: uppercase;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-transition: all .4s ease-out;
-  -moz-transition: all .4s ease-out;
-  -o-transition: all .4s ease-out;
-  transition: all .4s ease-out
+  .round-borders(0);
+  .transitions(all .4s ease-out)
 }
 .taan-tabs ul.nav.nav-justified li:hover a,
 .taan-tabs ul.nav.nav-justified li:focus a{
-  border-color: var(--main-color);
-  background-color: var(--main-color)
+  border-color: @main-color;
+  background-color: @main-color
 }
 .taan-tabs ul.nav.nav-justified li.active a,
 .taan-tabs ul.nav.nav-justified li.active:hover a,
 .taan-tabs ul.nav.nav-justified li.active:focus a{
-  border-color: var(--main-color);
-  background-color: var(--main-color);
+  border-color: @main-color;
+  background-color: @main-color;
   cursor: default
 }
 .taan-tabs .tab-content .tab-pane{
   padding: 30px;
-  background-color: var(--main-color)
+  background-color: @main-color
 }
 .taan-tabs .tab-content .tab-pane h3{
   margin-top:0
@@ -191,7 +181,7 @@ header#agency_display{
 header#display .display_title,
 header#agency_display .display_title{
   margin:0;
-  background-color: rgba(var(--main-rgb-color), .8);
+  background-color: fade(@main-color, 80%);
   max-height:245px;
   color: #FFFFFF;
   text-transform: uppercase
@@ -216,11 +206,8 @@ h2.dh2::after,
   left:50%;
   width: 0;
   height: 2px;
-  background-color: var(--main-color);
-  -webkit-transition: all 1.5s .4s ease-out;
-  -moz-transition: all 1.5s .4s ease-out;
-  -o-transition: all 1.5s .4s ease-out;
-  transition: all 1.5s .4s ease-out
+  background-color: @main-color;
+  .transitions(all 1.5s .4s ease-out)
 }
 h2.dh2::after{
   bottom:0
@@ -256,9 +243,7 @@ h2.dh2.aos-animate::after,
 .taan-btn {
   font-size: 22px;
   text-transform: uppercase;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
-  border-radius:0
+  .round-borders(0)
 }
 .taan form input,
 .taan select,
@@ -268,9 +253,9 @@ h2.dh2.aos-animate::after,
 .taan form input,
 .taan select,
 .taan form textarea{
-  border:2px solid var(--main-color);
-  color: var(--main-color);
-  font-family: var(--title-font);
+  border:2px solid @main-color;
+  color: @main-color;
+  font-family: @title-font;
   text-transform: uppercase;
   padding: 0 5px
 }
@@ -279,8 +264,8 @@ h2.dh2.aos-animate::after,
   margin-bottom: 1px
 }
 .taan .select-wrapper::before{
-	border-color:var(--dg-color);
-	background-color:var(--main-color);
+	border-color:@dg-color;
+	background-color:@main-color;
 	content:"\f078";
 	font-family:"FontAwesome";
 	color:#FFFFFF;
@@ -297,8 +282,8 @@ h2.dh2.aos-animate::after,
 .taan .select-wrapper > select{
   padding-right:40px;
   width: 100%;
-  border: 2px solid var(--main-color);
-  color: var(--dg-color)
+  border: 2px solid @main-color;
+  color: @dg-color
 }
 .taan .mobile_tabs .select-wrapper::before{
   line-height: 45px
@@ -308,11 +293,11 @@ h2.dh2.aos-animate::after,
   height: 45px
 }
 
-.taan form input:focus{ border-color: var(--dg-color) }
-.taan form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: var(--dg-color); }
-.taan form ::-moz-placeholder { /* Firefox 19+ */ color: var(--dg-color); }
-.taan form :-ms-input-placeholder { /* IE 10+ */ color: var(--dg-color); }
-.taan form :-moz-placeholder { /* Firefox 18- */ color: var(--dg-color); }
+.taan form input:focus{ border-color: @dg-color }
+.taan form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: @dg-color; }
+.taan form ::-moz-placeholder { /* Firefox 19+ */ color: @dg-color; }
+.taan form :-ms-input-placeholder { /* IE 10+ */ color: @dg-color; }
+.taan form :-moz-placeholder { /* Firefox 18- */ color: @dg-color; }
 .taan .pagination li.disabled{ opacity: .4 }
 .taan .pagination li.active a,
 .taan .pagination li a:hover,
@@ -320,13 +305,13 @@ h2.dh2.aos-animate::after,
 .taan .pagination li a[aria-label=Next]{
   font-weight: bold;
   background-color: #FFF;
-  color: var(--main-color)
+  color: @main-color
 }
 .taan .pagination li a,
 .taan .pagination li span{
-  font-family: var(--subtitle-font);
+  font-family: @subtitle-font;
   font-size: 15px;
-  color: var(--main-color);
+  color: @main-color;
   border: 0 none
 }
 .taan .pagination li span:hover{
@@ -334,46 +319,43 @@ h2.dh2.aos-animate::after,
 }
 #subnavbar{
   z-index:11;
-  background-color: var(--dg-color);
+  background-color: @dg-color;
   margin-top: -40px
 }
 #subnavbar.affix{
   margin-top: 0
 }
 #subnavbar li:not(:first-child){
-  border-left: 1px solid var(--lgh-color)
+  border-left: 1px solid @lgh-color
 }
 #subnavbar li a{
   color: #FFF;
   text-transform: uppercase;
-  font-family: var(--title-font);
+  font-family: @title-font;
   font-size: 29px;
   line-height: 24px;
-  background-color: var(--dg-color);
+  background-color: @dg-color;
   padding: 15px 15px 10px
 }
 #subnavbar li.active a,
 #subnavbar li a:hover{
-  background-color: var(--main-color)
+  background-color: @main-color
 }
 .box_item{
   border: 1px solid transparent;
   overflow: hidden;
   padding: 20px 50px 20px 20px;
-  -webkit-transition: border .4s linear;
-  -moz-transition: border .4s linear;
-  -o-transition: border .4s linear;
-  transition: border .4s linear;
+  .transitions(border .4s linear)
 }
 .box_item.hover.box_red{
-  border-color: var(--main-color)
+  border-color: @main-color
 }
 .box_item h2,
 .box_item h2 > a,
 .box_item h2 > a span.resume,
 .box_item h2 > .info,
 .box_item h2 > .info span.resume{
-  color: var(--dg-color)
+  color: @dg-color
 }
 .box_item h2 > a span.heading,
 .box_item h2 > .info span.heading{
@@ -391,10 +373,7 @@ h2.dh2.aos-animate::after,
 .box_item h2 > a span.cover_img,
 .box_item h2 > .info span.cover_img{
   border: 1px solid transparent;
-  -webkit-transition: border .4s linear;
-  -moz-transition: border .4s linear;
-  -o-transition: border .4s linear;
-  transition: border .4s linear
+  .transitions(border .4s linear)
 }
 .box_item h2 > a span.cover_img img,
 .box_item h2 > .info span.cover_img img{
@@ -402,7 +381,7 @@ h2.dh2.aos-animate::after,
 }
 .box_item.hover.box_red h2 > a span.cover_img,
 .box_item h2 > a:hover span.cover_img{
-  border-color: var(--main-color)
+  border-color: @main-color
 }
 .box_item h2 > a span.resume,
 .box_item h2 > .info span.resume{
@@ -423,7 +402,7 @@ h2.dh2.aos-animate::after,
 }
 .box_item ul li .etc{
   background-color: #FFFFFF;
-  color: var(--main-color);
+  color: @main-color;
   position: absolute;
   right:0;
   top:0;
@@ -438,7 +417,7 @@ h2.dh2.aos-animate::after,
   overflow: hidden;
   font-size: 15px;
   line-height: 18px;
-  color: var(--dg-color);
+  color: @dg-color;
   padding: 7px 15px 7px 50px
 }
 .box_item ul li a:hover,
@@ -480,11 +459,8 @@ h2.dh2.aos-animate::after,
   bottom:0;
   width: 0;
   height:1px;
-  border-bottom:1px solid var(--main-color);
-  -webkit-transition: width .8s ease-out;
-  -moz-transition: width .8s ease-out;
-  -o-transition: width .8s ease-out;
-  transition: width .8s ease-out;
+  border-bottom:1px solid @main-color;
+  .transitions(width .8s ease-out)
 }
 .box_item ul li a:hover::after{
   width: 100%
@@ -521,7 +497,7 @@ h2.dh2.aos-animate::after,
   }
   .taan nav.navbar li:hover a, .taan nav.navbar li:focus a, .taan nav.navbar li.active a{
     background-color: transparent!important;
-    color:var(--dg-color)!important
+    color:@dg-color!important
   }
   .taan nav.navbar li.active a, .taan nav.navbar li.active:hover a, .taan nav.navbar li.active:focus a{
     cursor: default;
@@ -529,7 +505,7 @@ h2.dh2.aos-animate::after,
   .taan nav.navbar li a{
     font-size: 24px;
     text-transform: uppercase;
-    color:var(--dg-color);
+    color:@dg-color;
     background-color: transparent;
     overflow: hidden;
     display:inline-block;
@@ -545,11 +521,9 @@ h2.dh2.aos-animate::after,
     overflow: hidden;
     padding: 0;
     max-height: 0;
-    color: var(--main-color);
+    color: @main-color;
     content: attr(data-hover);
-    -webkit-transition: max-height .3s;
-    -moz-transition: max-height .3s;
-    transition: max-height .3s
+    .transitions(max-height .3s)
   }
   .taan nav.navbar li a:hover::before, .taan nav.navbar li a:focus::before, .taan nav.navbar li.active a::before {
     max-height: 100%
@@ -607,15 +581,12 @@ h2.dh2.aos-animate::after,
     border: 0 none
   }
   .taan .navbar-default .navbar-toggle .icon-bar{
-    background-color: var(--main-color);
+    background-color: @main-color;
     width: 75px;
     height: 7px;
-    border-radius: 0;
     position:absolute;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out
+    .round-borders(0);
+    .transitions(all .3s ease-out)
   }
   .taan .navbar-toggle .icon-bar+.icon-bar{
     margin-top: 10px
@@ -662,7 +633,7 @@ h2.dh2.aos-animate::after,
     left: 8px;
   }
   .taan nav.navbar li a{
-    color: var(--dg-color);
+    color: @dg-color;
     background-color: #FFF;
     font-size: 30px;
     line-height: 32px
@@ -670,8 +641,8 @@ h2.dh2.aos-animate::after,
   .navbar-default .navbar-nav>.active>a,
   .navbar-default .navbar-nav>.active>a:focus,
   .navbar-default .navbar-nav>.active>a:hover{
-    color: var(--lg-color);
-    background-color: var(--main-color)
+    color: @lg-color;
+    background-color: @main-color
   }
   header#display .display_title, header#agency_display .display_title{
     padding: 5px 15px

@@ -1,15 +1,17 @@
+@import "base";
+
 header#display{
-  background: var(--dg-color) url("assets/img/banners_samples/banner_home.png") no-repeat top center
+  background: @dg-color url("../img/banners_samples/banner_home.png") no-repeat top center
 }
 header#agency_display{
-  background: var(--dg-color) url("assets/img/banners_samples/banner_agencies.png") no-repeat top center
+  background: @dg-color url("../img/banners_samples/banner_agencies.png") no-repeat top center
 }
 header#agency_display h3,
 header#agency_display p{
-  font-family: var(--title-font)
+  font-family: @title-font
 }
 .home_blog_post{
-  border: 1px solid var(--main-color);
+  border: 1px solid @main-color;
   padding: 30px;
   margin-bottom: 30px
 }
@@ -30,8 +32,10 @@ header#agency_display p{
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
-  height: 0; overflow: hidden;
-  max-width: 100%; height: auto
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto
 }
 .embed-container iframe, .embed-container object, .embed-container embed {
   position: absolute;
