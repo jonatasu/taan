@@ -29,10 +29,8 @@ $("html,body").on("click",".scrollit",function(e){
 $('#nav-icon4').on("click",function(){ $(this).toggleClass('open'); });
 
 $(document).ready(function(){
-  // ADD "Animate On-Scroll" attributes on every "P" tag
-  $("section h2, section p, section ul").each(function(){ $(this).attr("data-aos","fade-up"); });
-  $(".taan-tabs .tab-pane ul").each(function(){ $(this).attr("data-aos","fade-up"); });
-  $(".taan-tabs .tab-pane img").each(function(){ $(this).attr("data-aos","fade-in"); });
+  // ADD "Animate On-Scroll" every "SECTION" tag that doesn't have it
+  $("section").each(function(){ $(this).data("aos") === undefined && $(this).data("aos","fade-up"); });
 
   initAOS();
 });
