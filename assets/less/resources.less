@@ -1,27 +1,24 @@
-@import "base";
-
-header#display{
+.page_resources header#display{
   background: @dg-color url("../img/banners_samples/banner_resources.png") no-repeat top center
-}
+};
 .resource{
   margin:15px 0 30px;
-  padding-bottom: 20px
-}
-.resource .logo_frame{
-  width: 120px;
-  height: 120px;
-  overflow: hidden
-}
-.resource .logo_frame img{
-  width: 100%
-}
-.resource > p > a {
-  color: #000;
-}
-.resource > p > a:hover{
-  color: @main-color
-}
-.resource > p > a,
-.resource > p > a:hover{
-  text-decoration: none
-}
+  padding-bottom: 20px;
+  .logo_frame{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    img{
+      width: 100%
+    }
+  };
+  & > p > a{
+    color: #000;
+    &,&:hover{
+      text-decoration: none
+    };
+    &:hover{
+      color: @main-color
+    }
+  }
+};

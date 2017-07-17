@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   require('jit-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
   grunt.initConfig({
     less: {
       development: {
@@ -9,29 +11,31 @@ module.exports = function(grunt) {
           yuicompress: true,
           optimization: 2,
           sourceMap: true,
-          sourceMapFilename: "assets/css/stylesheets.map",
-          sourceMapBasepath: "assets/css/"
+          sourceMapFilename: 'assets/css/taan.min.css.map', // where file is generated and located
+          sourceMapURL: 'taan.min.css.map', // the complete url and filename put in the compiled css file
+          sourceMapBasepath: '/', // Sets sourcemap base path, defaults to current working directory.
+          sourceMapRootpath: '' // adds this path onto the sourcemap filename and less file paths
         },
         files: {
-          "assets/css/about.min.css": "assets/less/about.less", // destination file and source file
-          "assets/css/agencies.min.css": "assets/less/agencies.less",
-          "assets/css/contact.min.css": "assets/less/contact.less",
-          "assets/css/events.min.css": "assets/less/events.less",
-          "assets/css/home.min.css": "assets/less/home.less",
-          "assets/css/resources.min.css": "assets/less/resources.less"
+          "assets/css/taan.min.css": "assets/less/base.less" // destination file and source file
         }
       }
+    },
+    jshint: {
+      all: ['assets/js/*.js']
     },
     watch: {
       styles: {
         files: ['assets/less/*.less'], // which files to watch
         tasks: ['less'],
         options: {
+          livereload: true,
           nospawn: true
         }
       }
     }
   });
+
 
   grunt.registerTask('default', ['less', 'watch']);
 };

@@ -1,25 +1,27 @@
-@import "base";
+.page_contact header#display{
+  background: @dg-color url("../img/banners_samples/banner_contact.png") no-repeat top center;
+  p{
+    text-transform: none;
+  }
+}
+.taan {
+  form{
+    padding: 30px 0;
 
-header#display{
-  background: @dg-color url("../img/banners_samples/banner_contact.png") no-repeat top center
-}
-header#display p{
-  text-transform: none;
-}
-.taan form{
-  padding: 30px 0;
-}
-.taan form textarea{
-  height: 125px;
-  resize: none;
+    textarea{
+      height: 125px;
+      resize: none;
+    }
+  }
 }
 
 @media screen and (min-width: 768px){
-  header#display{
-    padding: 35px 0
-  }
-  header#display .display_title {
-    padding: 40px 3%;
-    max-height: 385px
+  .page_contact header#display{
+    padding: 35px 0;
+
+    .display_title {
+      padding: 40px 3%;
+      max-height: 385px
+    }
   }
 }

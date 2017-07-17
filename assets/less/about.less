@@ -1,88 +1,94 @@
-@import "base";
-
-header#display{
+.page_about header#display{
   background: @dg-color url("../img/banners_samples/banner_about.png") no-repeat top center
 }
 .person{
-  margin-bottom: 30px
+  margin-bottom: 30px;
+
+  span.persona_photo{
+    width: 120px;
+    height: 120px;
+    display:block;
+    margin: 40px auto 20px;
+    overflow: hidden;
+    border: 1px solid @main-color;
+
+    &.pull-left{
+      margin: 0 20px 0 0
+    }
+  };
+  h3{
+    font-size: 22px;
+    margin-top: 0
+  };
+  p{
+    font-size: 15px;
+    line-height: 18px;
+
+    em{
+      font-weight: 100;
+      display:block
+    };
+    span.side-info{
+      display:block
+    };
+    a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      margin: 0 15px;
+
+      img{
+        width: 100%
+      }
+    }
+  }
 }
-.person span.persona_photo{
-  width: 120px;
-  height: 120px;
-  display:block;
-  margin: 40px auto 20px;
-  overflow: hidden;
-  border: 1px solid @main-color
-}
-.person span.persona_photo.pull-left{
-  margin: 0 20px 0 0
-}
-.person h3{
-  font-size: 22px;
-  margin-top: 0
-}
-.person p{
-  font-size: 15px;
-  line-height: 18px
-}
-.person p em{
-  font-weight: 100;
-  display:block
-}
-.person p span.side-info{
-  display:block
-}
-.person p a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  margin: 0 15px;
-}
-.person p a img{
-  width: 100%
-}
+
 #history, #resources{
   margin-bottom: 50px
 }
-.timeline_breakpoint h3{
-  color: @main-color;
-  font-weight: 400;
-  margin: 15px 0 30px
+.timeline_breakpoint{
+  h3{
+    color: @main-color;
+    font-weight: 400;
+    margin: 15px 0 30px
+  };
+  h4{
+    color: @lgh-color;
+    font-family: @title-font;
+    margin:0
+  };
+  p{
+    color: @lgh-color;
+    padding-bottom: 15px
+  };
+  .timeline{
+    width:2px;
+    margin: 0 auto;
+    height: 1px;
+    position: relative;
+    background-color: @main-color;
+    .transitions(height 1.5s .4s ease-out);
+
+    &::before,&::after{
+      content: " ";
+      background-color: @main-color;
+      position: absolute;
+      left:50%;
+      width: 12px;
+      height:12px;
+      margin-left: -6px;
+      .round-borders(50%)
+    };
+    &::before{
+      top:-2px
+    };
+    &::after{
+      bottom:-2px
+    }
+  }
 }
-.timeline_breakpoint h4{
-  color: @lgh-color;
-  font-family: var(--title-font);
-  margin:0
-}
-.timeline_breakpoint p{
-  color: @lgh-color;
-  padding-bottom: 15px
-}
-.timeline_breakpoint .timeline{
-  width:2px;
-  margin: 0 auto;
-  height: 1px;
-  position: relative;
-  background-color: @main-color;
-  .transitions(height 1.5s .4s ease-out)
-}
-.timeline_breakpoint .timeline::before,
-.timeline_breakpoint .timeline::after{
-  content: " ";
-  background-color: @main-color;
-  position: absolute;
-  left:50%;
-  width: 12px;
-  height:12px;
-  margin-left: -6px;
-  .round-borders(50%)
-}
-.timeline_breakpoint .timeline::before{
-  top:-2px
-}
-.timeline_breakpoint .timeline::after{
-  bottom:-2px
-}
+
 @media all and (min-width: 768px){
   .timeline_breakpoint h4{
     font-size: 120px

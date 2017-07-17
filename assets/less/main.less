@@ -30,28 +30,34 @@ h1.dh1{
   margin-bottom: 0;
   text-transform: uppercase;
   margin-top: 40px;
-  position:relative
+  position:relative;
+
+  &::after{
+    content: attr(data-shadow);
+    position: absolute;
+    bottom:0;
+    left:0;
+    font-size: 56px;
+    line-height: 74px;
+    color:@main-color
+  };
+  &.aos-animate{
+    -webkit-animation: @animate-title;
+    -moz-animation: @animate-title;
+    animation: @animate-title;
+  }
 }
-h1.dh1::after{
-  content: attr(data-shadow);
-  position: absolute;
-  bottom:0;
-  left:0;
-  font-size: 56px;
-  line-height: 74px;
-  color:@main-color
+
+header#display{
+  h1.dh1{
+    color: fade(@lgh-color, 20%);
+
+    &::after{
+      color:#FFF
+    }
+  }
 }
-header#display h1.dh1{
-  color: fade(@lgh-color, 20%)
-}
-header#display h1.dh1::after{
-  color:#FFF
-}
-h1.dh1.aos-animate{
-  -webkit-animation: @animate-title;
-  -moz-animation: @animate-title;
-  animation: @animate-title;
-}
+
 h2.dh2{
   font-size: 26px;
   font-family: @title-font;
@@ -86,20 +92,21 @@ a:hover, p > a:hover,a:focus, p > a:focus{
   padding: 0 15px;
   border: 2px solid;
   text-transform: uppercase;
-  .transitions(all .3s linear)
-}
-.taan-btn:hover,.taan-btn:focus{
-  text-decoration: none
-}
-.taan-btn.taan-btn-default,.taan-btn.taan-btn-reverse:hover,.taan-btn.taan-btn-reverse:focus{
-  color: @lg-color;
-  background-color: @main-color;
-  border-color: @main-color
-}
-.taan-btn.taan-btn-reverse,.taan-btn.taan-btn-default:hover,.taan-btn.taan-btn-default:focus{
-  color: @main-color;
-  background-color: @lg-color;
-  border-color: @main-color
+  .transitions(all .3s linear);
+
+  &:hover,&:focus{
+    text-decoration: none
+  };
+  &.taan-btn-default,&.taan-btn-reverse:hover,&.taan-btn-reverse:focus{
+    color: @lg-color;
+    background-color: @main-color;
+    border-color: @main-color
+  };
+  &.taan-btn-reverse,&.taan-btn-default:hover,&.taan-btn-default:focus{
+    color: @main-color;
+    background-color: @lg-color;
+    border-color: @main-color
+  }
 }
 nav.navbar {
   margin: 0;
@@ -107,62 +114,64 @@ nav.navbar {
   .round-borders(0)
 }
 .taan-tabs{
-  margin: 40px 0
+  margin: 40px 0;
+
+  ul.nav.nav-justified{
+    li a{
+      border-bottom-color: @dg-color;
+      background-color: @dg-color;
+      color:#FFFFFF;
+      font-family: @title-font;
+      font-size:24px;
+      padding: 20px 15px 15px;
+      white-space: nowrap;
+      font-weight: normal;
+      text-transform: uppercase;
+      .round-borders(0);
+      .transitions(all .4s ease-out)
+    };
+    li:hover a,
+    li:focus a{
+      border-color: @main-color;
+      background-color: @main-color
+    };
+    li.active a,
+    li.active:hover a,
+    li.active:focus a{
+      border-color: @main-color;
+      background-color: @main-color;
+      cursor: default
+    }
+  };
+  .tab-content .tab-pane{
+    padding: 30px;
+    background-color: @main-color;
+
+    h3{
+      margin-top:0
+    };
+    h3, h4, p, .pull-right img + em, ul{
+      color:#FFF;
+      padding-bottom:20px
+    };
+    h4{
+      font-size: 16px;
+      font-weight: bold
+    };
+    .pull-right{
+      img{
+        width: 100%
+      };
+      img + em{
+        font-size: 14px;
+        display: block;
+        margin: 15px 0;
+        font-style: normal
+      }
+    }
+  }
 }
-.taan-tabs ul.nav.nav-justified li.active{}
-.taan-tabs ul.nav.nav-justified li a{
-  border-bottom-color: @dg-color;
-  background-color: @dg-color;
-  color:#FFFFFF;
-  font-family: @title-font;
-  font-size:24px;
-  padding: 20px 15px 15px;
-  white-space: nowrap;
-  font-weight: normal;
-  text-transform: uppercase;
-  .round-borders(0);
-  .transitions(all .4s ease-out)
-}
-.taan-tabs ul.nav.nav-justified li:hover a,
-.taan-tabs ul.nav.nav-justified li:focus a{
-  border-color: @main-color;
-  background-color: @main-color
-}
-.taan-tabs ul.nav.nav-justified li.active a,
-.taan-tabs ul.nav.nav-justified li.active:hover a,
-.taan-tabs ul.nav.nav-justified li.active:focus a{
-  border-color: @main-color;
-  background-color: @main-color;
-  cursor: default
-}
-.taan-tabs .tab-content .tab-pane{
-  padding: 30px;
-  background-color: @main-color
-}
-.taan-tabs .tab-content .tab-pane h3{
-  margin-top:0
-}
-.taan-tabs .tab-content .tab-pane h3,
-.taan-tabs .tab-content .tab-pane h4,
-.taan-tabs .tab-content .tab-pane p,
-.taan-tabs .tab-content .tab-pane .pull-right img + em,
-.taan-tabs .tab-content .tab-pane ul{
-  color:#FFF;
-  padding-bottom:20px
-}
-.taan-tabs .tab-content .tab-pane h4{
-  font-size: 16px;
-  font-weight: bold
-}
-.taan-tabs .tab-content .tab-pane .pull-right img{
-  width: 100%
-}
-.taan-tabs .tab-content .tab-pane .pull-right img + em{
-  font-size: 14px;
-  display: block;
-  margin: 15px 0;
-  font-style: normal
-}
+
 header#display,
 header#agency_display{
   position: relative;
@@ -186,18 +195,43 @@ header#agency_display .display_title{
   color: #FFFFFF;
   text-transform: uppercase
 }
-header#display .display_title h2{
-  font-size: 35px
+header#display{
+  .display_title{
+    h2{
+      font-size: 35px
+    };
+    p{
+      font-size: 20px
+    }
+  }
 }
-header#display .display_title p{
-  font-size: 20px
-}
+
 .taan > footer{
   padding: 30px 0 15px;
   text-align: center;
   margin: 0;
   background-color: #FFF;
-  font-size: 14px;position: relative
+  font-size: 14px;position: relative;
+
+  &::before{
+    top:0
+  };
+  p{
+    &.copy{
+      font-size: 14px;
+      color: #333
+    };
+    > a{
+      display: inline-block;
+      width:35px;
+      height: 35px;
+      margin: 0 15px;
+
+      > img{
+        width: 100%
+      }
+    }
+  }
 }
 h2.dh2::after,
 .taan > footer::before{
@@ -212,26 +246,10 @@ h2.dh2::after,
 h2.dh2::after{
   bottom:0
 }
-.taan > footer::before{
-  top:0
-}
 h2.dh2.aos-animate::after,
 .taan > footer.aos-animate::before{
   left:0;
   width: 100%;
-}
-.taan > footer p.copy{
-  font-size: 14px;
-  color: #333
-}
-.taan > footer > p > a{
-  display: inline-block;
-  width:35px;
-  height: 35px;
-  margin: 0 15px
-}
-.taan > footer > p > a > img{
-  width: 100%
 }
 .taan form .form-group {
   margin-bottom: 11px
@@ -261,29 +279,30 @@ h2.dh2.aos-animate::after,
 }
 .taan .select-wrapper{
 	position:relative;
-  margin-bottom: 1px
-}
-.taan .select-wrapper::before{
-	border-color:@dg-color;
-	background-color:@main-color;
-	content:"\f078";
-	font-family:"FontAwesome";
-	color:#FFFFFF;
-	display:inline-block;
-	position:absolute;
-	right:0;
-	top:0;
-  bottom:0;
-	pointer-events:none;
-	width:40px;
-	text-align:center;
-	line-height:26px;
-}
-.taan .select-wrapper > select{
-  padding-right:40px;
-  width: 100%;
-  border: 2px solid @main-color;
-  color: @dg-color
+  margin-bottom: 1px;
+
+  &::before{
+  	border-color:@dg-color;
+  	background-color:@main-color;
+  	content:"\f078";
+  	font-family:"FontAwesome";
+  	color:#FFFFFF;
+  	display:inline-block;
+  	position:absolute;
+  	right:0;
+  	top:0;
+    bottom:0;
+  	pointer-events:none;
+  	width:40px;
+  	text-align:center;
+  	line-height:26px;
+  };
+  > select{
+    padding-right:40px;
+    width: 100%;
+    border: 2px solid @main-color;
+    color: @dg-color
+  }
 }
 .taan .mobile_tabs .select-wrapper::before{
   line-height: 45px
@@ -292,262 +311,288 @@ h2.dh2.aos-animate::after,
   font-size: 38px;
   height: 45px
 }
+.taan form{
+  input:focus{ border-color: @dg-color };
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: @dg-color; };
+  ::-moz-placeholder { /* Firefox 19+ */ color: @dg-color; };
+  :-ms-input-placeholder { /* IE 10+ */ color: @dg-color; };
+  :-moz-placeholder { /* Firefox 18- */ color: @dg-color; }
+}
+.taan .pagination{
+  li.disabled{ opacity: .4 }
+  li.active a,
+  li a:hover,
+  li a[aria-label=Previous],
+  li a[aria-label=Next]{
+    font-weight: bold;
+    background-color: #FFF;
+    color: @main-color
+  };
+  li a,
+  li span{
+    font-family: @subtitle-font;
+    font-size: 15px;
+    color: @main-color;
+    border: 0 none;
 
-.taan form input:focus{ border-color: @dg-color }
-.taan form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: @dg-color; }
-.taan form ::-moz-placeholder { /* Firefox 19+ */ color: @dg-color; }
-.taan form :-ms-input-placeholder { /* IE 10+ */ color: @dg-color; }
-.taan form :-moz-placeholder { /* Firefox 18- */ color: @dg-color; }
-.taan .pagination li.disabled{ opacity: .4 }
-.taan .pagination li.active a,
-.taan .pagination li a:hover,
-.taan .pagination li a[aria-label=Previous],
-.taan .pagination li a[aria-label=Next]{
-  font-weight: bold;
-  background-color: #FFF;
-  color: @main-color
+    &:hover{
+      background-color: #FFF
+    }
+  }
 }
-.taan .pagination li a,
-.taan .pagination li span{
-  font-family: @subtitle-font;
-  font-size: 15px;
-  color: @main-color;
-  border: 0 none
-}
-.taan .pagination li span:hover{
-  background-color: #FFF;
-}
+
 #subnavbar{
   z-index:11;
   background-color: @dg-color;
-  margin-top: -40px
+  margin-top: -40px;
+
+  &.affix{
+    margin-top: 0
+  };
+  li{
+    &:not(:first-child){
+      border-left: 1px solid @lgh-color
+    };
+    a{
+      color: #FFF;
+      text-transform: uppercase;
+      font-family: @title-font;
+      font-size: 29px;
+      line-height: 24px;
+      background-color: @dg-color;
+      padding: 15px 15px 10px
+    }
+    &.active a,
+    & a:hover{
+      background-color: @main-color
+    }
+  }
 }
-#subnavbar.affix{
-  margin-top: 0
-}
-#subnavbar li:not(:first-child){
-  border-left: 1px solid @lgh-color
-}
-#subnavbar li a{
-  color: #FFF;
-  text-transform: uppercase;
-  font-family: @title-font;
-  font-size: 29px;
-  line-height: 24px;
-  background-color: @dg-color;
-  padding: 15px 15px 10px
-}
-#subnavbar li.active a,
-#subnavbar li a:hover{
-  background-color: @main-color
-}
+
 .box_item{
   border: 1px solid transparent;
   overflow: hidden;
   padding: 20px 50px 20px 20px;
-  .transitions(border .4s linear)
-}
-.box_item.hover.box_red{
-  border-color: @main-color
-}
-.box_item h2,
-.box_item h2 > a,
-.box_item h2 > a span.resume,
-.box_item h2 > .info,
-.box_item h2 > .info span.resume{
-  color: @dg-color
-}
-.box_item h2 > a span.heading,
-.box_item h2 > .info span.heading{
-  margin:25px 0;
-  font-size: 22px;
-  line-height: 24px;
-  white-space: nowrap
-}
-.box_item h2 > a:hover,
-.box_item h2 > a:focus{ text-decoration: none}
-.box_item h2 > a span,
-.box_item h2 > .info span{
-  display:block
-}
-.box_item h2 > a span.cover_img,
-.box_item h2 > .info span.cover_img{
-  border: 1px solid transparent;
-  .transitions(border .4s linear)
-}
-.box_item h2 > a span.cover_img img,
-.box_item h2 > .info span.cover_img img{
-  width: 100%
-}
-.box_item.hover.box_red h2 > a span.cover_img,
-.box_item h2 > a:hover span.cover_img{
-  border-color: @main-color
-}
-.box_item h2 > a span.resume,
-.box_item h2 > .info span.resume{
-  font-size: 15px;
-  line-height: 18px;
-}
-.box_item ul{
-  margin: 30px 0;
-  list-style: none;
-  padding: 0
-}
-.box_item ul li{
-  padding: 0 15px 0 0;
-  margin:0;
-  list-style: none;
-  margin-bottom: 25px;
-  position: relative
-}
-.box_item ul li .etc{
-  background-color: #FFFFFF;
-  color: @main-color;
-  position: absolute;
-  right:0;
-  top:0;
-  bottom:0;
-  font-weight: bolder;
-  line-height: 35px;
-}
-.box_item ul li a,
-.box_item ul li a:visited{
-  display: block;
-  position: relative;
-  overflow: hidden;
-  font-size: 15px;
-  line-height: 18px;
-  color: @dg-color;
-  padding: 7px 15px 7px 50px
-}
-.box_item ul li a:hover,
-.box_item ul li a:focus{
-  text-decoration: none
-}
-.box_item ul li a::before,
-.box_item ul li a::after{
-  content: " ";
-  position:absolute
-}
-.box_item ul li a::before{
-  width:31px;
-  height:31px;
-  left:0;
-  top:50%;
-  margin-top:-15px;
-  background-repeat: no-repeat;
-  background-size: 31px 31px
-}
-.box_item ul li a.icon_web::before{
-  background-image: url("../img/url_ico.svg")
-}
-.box_item ul li a.icon_mail::before{
-  background-image: url("../img/mail_ico.svg")
-}
-.box_item ul li a.icon_fb::before{
-  background-image: url("../img/face_ico.svg")
-}
-.box_item ul li a.icon_in::before{
-  background-image: url("../img/in_ico.svg")
-}
-.box_item ul li a.icon_tw::before{
-  background-image: url("../img/twitter_ico.svg")
-}
-.box_item ul li a::after{
-  position: absolute;
-  left:0;
-  bottom:0;
-  width: 0;
-  height:1px;
-  border-bottom:1px solid @main-color;
-  .transitions(width .8s ease-out)
-}
-.box_item ul li a:hover::after{
-  width: 100%
+  .transitions(border .4s linear);
+
+  &.hover.box_red{
+    border-color: @main-color
+  };
+  h2,
+  h2 > a,
+  h2 > a span.resume,
+  h2 > .info,
+  h2 > .info span.resume{
+    color: @dg-color
+  };
+  h2 > a span.heading,
+  h2 > .info span.heading{
+    margin:25px 0;
+    font-size: 22px;
+    line-height: 24px;
+    white-space: nowrap
+  };
+  h2 > a:hover,
+  h2 > a:focus{
+    text-decoration: none
+  };
+  h2 > a span,
+  h2 > .info span{
+    display:block
+  };
+  h2 > a span.cover_img,
+  h2 > .info span.cover_img{
+    border: 1px solid transparent;
+    .transitions(border .4s linear)
+  };
+  h2 > a span.cover_img img,
+  h2 > .info span.cover_img img{
+    width: 100%
+  };
+  &.hover.box_red h2 > a span.cover_img,
+  h2 > a:hover span.cover_img{
+    border-color: @main-color
+  };
+  h2 > a span.resume,
+  h2 > .info span.resume{
+    font-size: 15px;
+    line-height: 18px;
+  };
+  ul{
+    margin: 30px 0;
+    list-style: none;
+    padding: 0;
+
+    li{
+      padding: 0 15px 0 0;
+      margin:0;
+      list-style: none;
+      margin-bottom: 25px;
+      position: relative;
+
+      .etc{
+        background-color: #FFFFFF;
+        color: @main-color;
+        position: absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        font-weight: bolder;
+        line-height: 35px;
+      };
+      a{
+        &, &:visited{
+          display: block;
+          position: relative;
+          overflow: hidden;
+          font-size: 15px;
+          line-height: 18px;
+          color: @dg-color;
+          padding: 7px 15px 7px 50px
+        };
+        &:hover,
+        &:focus{
+          text-decoration: none
+        };
+        &::before,
+        &::after{
+          content: " ";
+          position:absolute
+        };
+        &::before{
+          width:31px;
+          height:31px;
+          left:0;
+          top:50%;
+          margin-top:-15px;
+          background-repeat: no-repeat;
+          background-size: 31px 31px
+        };
+        &.icon_web::before{
+          background-image: url("../img/url_ico.svg")
+        };
+        &.icon_mail::before{
+          background-image: url("../img/mail_ico.svg")
+        };
+        &.icon_fb::before{
+          background-image: url("../img/face_ico.svg")
+        };
+        &.icon_in::before{
+          background-image: url("../img/in_ico.svg")
+        };
+        &.icon_tw::before{
+          background-image: url("../img/twitter_ico.svg")
+        };
+        &::after{
+          position: absolute;
+          left:0;
+          bottom:0;
+          width: 0;
+          height:1px;
+          border-bottom:1px solid @main-color;
+          .transitions(width .8s ease-out)
+        };
+        &:hover::after{
+          width: 100%
+        }
+      }
+    }
+  }
 }
 
 
 /*** Tablets and Desktops ***/
 @media screen and (min-width: 768px) {
-  .taan nav.navbar {
-    position: fixed;
-    background-color: #FFF!important;
-    top:0;
-    left:0;
-    margin:0;
-    padding:0;
-    width: 100%;
-    max-height: 108px;
-    background: transparent;
-    z-index: 12;
-    -webkit-box-shadow: 0 0 7px #555;
-    -moz-box-shadow: 0 0 7px #555;
-    box-shadow: 0 0 7px #555
-  }
-  .taan nav.navbar .navbar-header{
-    padding-left: 25px
-  }
-  .taan #navbar {
-    padding-right: 25px
-  }
-  .taan nav.navbar a.navbar-brand {
-    width: 95px;/* por 79px*/
-    padding: 0;
-    margin: 10px 0;
-  }
-  .taan nav.navbar li:hover a, .taan nav.navbar li:focus a, .taan nav.navbar li.active a{
-    background-color: transparent!important;
-    color:@dg-color!important
-  }
-  .taan nav.navbar li.active a, .taan nav.navbar li.active:hover a, .taan nav.navbar li.active:focus a{
-    cursor: default;
-  }
-  .taan nav.navbar li a{
-    font-size: 24px;
-    text-transform: uppercase;
-    color:@dg-color;
-    background-color: transparent;
-    overflow: hidden;
-    display:inline-block;
-    position: relative;
-    padding: 0;
-    margin: 40px 20px;
-    line-height: 30px
-  }
-  .taan nav.navbar li a::before{
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    padding: 0;
-    max-height: 0;
-    color: @main-color;
-    content: attr(data-hover);
-    .transitions(max-height .3s)
-  }
-  .taan nav.navbar li a:hover::before, .taan nav.navbar li a:focus::before, .taan nav.navbar li.active a::before {
-    max-height: 100%
+  .taan{
+    nav.navbar {
+      position: fixed;
+      background-color: #FFF!important;
+      top:0;
+      left:0;
+      margin:0;
+      padding:0;
+      width: 100%;
+      max-height: 108px;
+      background: transparent;
+      z-index: 12;
+      .box-shadow(0 0 7px #555);
+
+      .navbar-header{
+        padding-left: 25px
+      };
+      a.navbar-brand {
+        width: 95px;/* por 79px*/
+        padding: 0;
+        margin: 10px 0;
+      };
+      li{
+        a{
+          font-size: 24px;
+          text-transform: uppercase;
+          color:@dg-color;
+          background-color: transparent;
+          overflow: hidden;
+          display:inline-block;
+          position: relative;
+          padding: 0;
+          margin: 40px 20px;
+          line-height: 30px;
+
+          &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            padding: 0;
+            max-height: 0;
+            color: @main-color;
+            content: attr(data-hover);
+            .transitions(max-height .3s)
+          }
+        };
+        &:hover a,
+        &:focus a,
+        &.active a{
+          background-color: transparent!important;
+          color:@dg-color!important
+        };
+        &.active a, &.active:hover a, &.active:focus a{
+          cursor: default;
+        };
+        a:hover::before, a:focus::before, &.active a::before {
+          max-height: 100%
+        }
+      }
+    };
+    #navbar {
+      padding-right: 25px
+    };
   }
   header#display{
     height: 455px;
-    padding: 105px 0
-  }
-  header#display .display_title{
-    padding: 40px 10%
-  }
-  header#display .display_title h2{
-    font-size: 56px;
-    line-height: 48px
+    padding: 105px 0;
+
+    .display_title{
+      padding: 40px 10%;
+
+      h2{
+        font-size: 56px;
+        line-height: 48px
+      }
+    }
   }
   header#agency_display{
     height: 299px;
-    padding: 65px 0
-  }
-  header#agency_display .display_title h3{
-    margin-bottom:0
-  }
-  header#agency_display .display_title p{
-    margin-top:0
+    padding: 65px 0;
+
+    .display_title{
+      h3{
+        margin-bottom:0
+      };
+      p{
+        margin-top:0
+      }
+    }
   }
   #wrapper > section > .container {
     padding: 0 60px
@@ -558,65 +603,60 @@ h2.dh2.aos-animate::after,
 }
 /*** Smartphones ***/
 @media screen and (max-width: 767px){
-  .taan .navbar-default .navbar-brand{
-    width: 110px;
-    padding: 0;
-    height: 95px;
-    margin: 20px
+  .taan{
+    .navbar-default{
+      .navbar-brand{
+        width: 110px;
+        padding: 0;
+        height: 95px;
+        margin: 20px
+      };
+      .navbar-toggle{
+        padding: 10px;
+        margin-top: 40px;
+        margin-right: 40px;
+        margin-bottom: 0;
+        border: 0 none;
+        position: relative;
+        width: 90px;
+        height: 71px;
+        &.collapsed,
+        &:hover,
+        &:focus{
+          background-color: transparent;
+          border: 0 none
+        };
+
+        .icon-bar{
+          background-color: @main-color;
+          width: 75px;
+          height: 7px;
+          position:absolute;
+          .round-borders(0);
+          .transitions(all .3s ease-out);
+
+          &+&{
+            margin-top: 10px
+          }
+        }
+      }
+    }
   }
-  .taan .navbar-default .navbar-toggle{
-    padding: 10px;
-    margin-top: 40px;
-    margin-right: 40px;
-    margin-bottom: 0;
-    border: 0 none;
-    position: relative;
-    width: 90px;
-    height: 71px
-  }
-  .taan .navbar-default .navbar-toggle.collapsed,
-  .taan .navbar-default .navbar-toggle:hover,
-  .taan .navbar-default .navbar-toggle:focus{
-    background-color: transparent;
-    border: 0 none
-  }
-  .taan .navbar-default .navbar-toggle .icon-bar{
-    background-color: @main-color;
-    width: 75px;
-    height: 7px;
-    position:absolute;
-    .round-borders(0);
-    .transitions(all .3s ease-out)
-  }
-  .taan .navbar-toggle .icon-bar+.icon-bar{
-    margin-top: 10px
-  }
+
   #nav-icon4 span:nth-child(2) {
     top: 0px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
+    .transform-origin(left, center);
   }
   #nav-icon4 span:nth-child(3) {
     top: 14px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
+    .transform-origin(left, center);
   }
   #nav-icon4 span:nth-child(4) {
     top: 36px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
+    .transform-origin(left, center);
   }
   #nav-icon4.open span:nth-child(2) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+    .transform(rotate(45deg));
     top: -3px;
     left: 8px;
   }
@@ -625,10 +665,7 @@ h2.dh2.aos-animate::after,
     opacity: 0;
   }
   #nav-icon4.open span:nth-child(4) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    .transform(rotate(-45deg));
     top: 39px;
     left: 8px;
   }
