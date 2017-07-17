@@ -16,10 +16,10 @@ $(".personas").each(function(){
   sideInfo = Math.max.apply(null, sideInfo);
 
   $(this).find(".person em").each(function(){
-    $(this).height(em+"px")
+    $(this).height(em+"px");
   });
   $(this).find(".person .side-info").each(function(){
-    $(this).height(sideInfo+"px")
+    $(this).height(sideInfo+"px");
   });
 
 });

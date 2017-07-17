@@ -21,7 +21,9 @@ $(".taan nav.navbar li.active a").on("click", function(e){ e.preventDefault(); }
 
 // Prevents a click on ANCHOR buttons and scrolls direct to ANCHOR's place
 $("html,body").on("click",".scrollit",function(e){
-  $($(this).attr("href")).length > 0 && e.preventDefault();
+  if($($(this).attr("href")).length > 0){
+    e.preventDefault();
+  }
   $("html,body").animate({ scrollTop: ($($(this).attr("href")).offset().top - navbarHeight) }, 1300);
 });
 
@@ -30,7 +32,16 @@ $('#nav-icon4').on("click",function(){ $(this).toggleClass('open'); });
 
 $(document).ready(function(){
   // ADD "Animate On-Scroll" every "SECTION" tag that doesn't have it
-  $("section").each(function(){ $(this).data("aos") === undefined && $(this).data("aos","fade-up"); });
+  $("section").each(function(){
+    if($(this).data("aos") === undefined){
+      $(this).data("aos","fade-up");
+    }
+  });
+
+  // Rola o scroll da página até o conteúdo se caso existir conteúdo com o mesmo ID que a HASH da URL
+	if(window.location.hash != undefined && window.location.hash != "" && $(window.location.hash).length > -1){
+		$("html,body").animate({scrollTop: ($(window.location.hash).offset().top - $("nav.navbar-taan").outerHeight())+"px" }, 1000);
+	}
 
   initAOS();
 });
