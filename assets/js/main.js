@@ -38,6 +38,11 @@ $(document).ready(function(){
     }
   });
 
+  if($("#subnavbar").length !== 0){
+    // Sets the right position for the SUB-NAVBAR when "affixed"
+    $("#subnavbar").data("offset-top", $("#subnavbar").offset().top - ($("body > nav").height() + 20)).css("top",$("body > nav").height());
+  }
+
   // Rola o scroll da página até o conteúdo se caso existir conteúdo com o mesmo ID que a HASH da URL
 	if(window.location.hash != undefined && window.location.hash != "" && $(window.location.hash).length > -1){
 		$("html,body").animate({scrollTop: ($(window.location.hash).offset().top - $("nav.navbar-taan").outerHeight())+"px" }, 1000);

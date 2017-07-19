@@ -28,6 +28,3 @@ $(".personas").each(function(){
 $(".timeline").each(function(){
   $(this).height( $(this).parent().next().height() - $(this).prev().height() );
 });
-
-// Sets the right position for the SUB-NAVBAR when "affixed"
-$("#subnavbar").data("offset-top", $("#subnavbar").offset().top - ($("body > nav").height() + 20)).css("top",$("body > nav").height());
