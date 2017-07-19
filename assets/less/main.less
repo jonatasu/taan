@@ -689,7 +689,12 @@ h2.dh2.aos-animate::after,
       }
     }
   }
-
+  #subnavbar{
+    &.affix{
+      opacity: 0;
+      filter: alpha(opacity=0)
+    }
+  }
   #nav-icon4 span:nth-child(2) {
     top: 0px;
     .transform-origin(left, center);
