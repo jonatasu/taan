@@ -529,7 +529,7 @@ h2.dh2.aos-animate::after,
         a{
           font-size: 24px;
           text-transform: uppercase;
-          color:@dg-color;
+          color:transparent;
           background-color: transparent;
           overflow: hidden;
           display:inline-block;
@@ -537,31 +537,63 @@ h2.dh2.aos-animate::after,
           padding: 0;
           margin: 40px 20px;
           line-height: 30px;
+          .transitions(all .8s ease-in-out);
 
-          &::before{
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            padding: 0;
-            max-height: 0;
-            color: @main-color;
+          &::before {
+            color: @dg-color;
+            text-shadow: 0 0 1px rgba(255,255,255,0.3);
             content: attr(data-hover);
-            .transitions(max-height .3s)
+            position: absolute;
+            pointer-events: none;
+            .transitions(all .3s ease-in-out);
+          };
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: @main-color;
+            opacity: 0;
+            pointer-events: none;
+            .transform(translateY(5px));
+            .transitions(all .3s ease-in-out)
+          };
+          &:hover::before, &:focus::before {
+            opacity: 0;
+            .transform(translateY(-4px))
+          };
+          &:hover::after, &:focus::after {
+            opacity: 1;
+            .transform(translateY(0px))
           }
+
         };
         &:hover a,
         &:focus a,
         &.active a{
           background-color: transparent!important;
-          color:@dg-color!important
+          color:@main-color!important
         };
-        &.active a, &.active:hover a, &.active:focus a{
-          cursor: default;
-        };
-        a:hover::before, a:focus::before, &.active a::before {
-          max-height: 100%
+        &.active{
+          &,
+          &:hover a,
+          &:active a{
+            cursor: default
+          };
+          a{
+            &::before{
+              opacity: 0;
+              .transform(translateY(-4px))
+            };
+            &::after{
+              opacity: 1;
+              .transform(translateY(0px))
+            }
+          }
         }
+
       }
     };
     #navbar {
@@ -609,7 +641,7 @@ h2.dh2.aos-animate::after,
         width: 110px;
         padding: 0;
         height: 95px;
-        margin: 20px
+        margin: 20px 20px 20px 50px
       };
       .navbar-toggle{
         padding: 10px;
@@ -648,7 +680,7 @@ h2.dh2.aos-animate::after,
     .transform-origin(left, center);
   }
   #nav-icon4 span:nth-child(3) {
-    top: 14px;
+    top: 15px;
     .transform-origin(left, center);
   }
   #nav-icon4 span:nth-child(4) {
@@ -656,9 +688,9 @@ h2.dh2.aos-animate::after,
     .transform-origin(left, center);
   }
   #nav-icon4.open span:nth-child(2) {
-    .transform(rotate(45deg));
-    top: -3px;
+    top: -9px;
     left: 8px;
+    .transform(rotate(45deg));
   }
   #nav-icon4.open span:nth-child(3) {
     width: 0%;
@@ -682,7 +714,7 @@ h2.dh2.aos-animate::after,
     background-color: @main-color
   }
   header#display .display_title, header#agency_display .display_title{
-    padding: 5px 15px
+    padding: 5px 50px
   }
   .taan form.form-inline .form-group{
     margin-right:20px
