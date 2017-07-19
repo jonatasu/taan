@@ -2,15 +2,16 @@
 var navbarHeight = $(".navbar-taan").height();
 var wrapperHeight = $("#wrapper").height();
 
-function initAOS(){
-  // Iniate the Animate On Scroll plugin
-  AOS.init({
-    offset: 100,
-    duration: 600,
-    easing: 'ease-in-sine',
-    delay: 100
-  });
-}
+
+// Iniate the Animate On Scroll plugin
+AOS.init({
+  disable: 'mobile',
+  offset: 100,
+  duration: 1200,
+  easing: 'ease-in-sine',
+  delay: 300
+});
+
 
 // Set "#wrapper" TOP padding as navbar's height
 if( $(window).width() > 768 ){ $("#wrapper").css("padding-top", navbarHeight+"px"); }
@@ -31,13 +32,6 @@ $("html,body").on("click",".scrollit",function(e){
 $('#nav-icon4').on("click",function(){ $(this).toggleClass('open'); });
 
 $(document).ready(function(){
-  // ADD "Animate On-Scroll" every "SECTION" tag that doesn't have it
-  $("section").each(function(){
-    if($(this).data("aos") === undefined){
-      $(this).data("aos","fade-up");
-    }
-  });
-
   if($("#subnavbar").length !== 0){
     // Sets the right position for the SUB-NAVBAR when "affixed"
     $("#subnavbar").data("offset-top", $("#subnavbar").offset().top - ($("body > nav").height() + 20)).css("top",$("body > nav").height());
@@ -48,13 +42,13 @@ $(document).ready(function(){
 		$("html,body").animate({scrollTop: ($(window.location.hash).offset().top - $("nav.navbar-taan").outerHeight())+"px" }, 1000);
 	}
 
-  initAOS();
+  AOS.refresh();
 });
 $(window).scroll(function(){
 
   // Calls AOS again if content height's changes
   if(wrapperHeight !== $("#wrapper").height()){
     wrapperHeight = $("#wrapper").height();
-    initAOS();
+    AOS.refresh();
   }
 });

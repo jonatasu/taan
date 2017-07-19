@@ -24,7 +24,6 @@ html, body, #wrapper{
   padding-bottom: 50px
 }
 h1.dh1{
-  font-size: 84px;
   font-family: @title-font;
   color:#FFF;
   margin-bottom: 0;
@@ -37,8 +36,6 @@ h1.dh1{
     position: absolute;
     bottom:0;
     left:0;
-    font-size: 56px;
-    line-height: 74px;
     color:@main-color
   };
   &.aos-animate{
@@ -104,8 +101,13 @@ a:hover, p > a:hover,a:focus, p > a:focus{
   };
   &.taan-btn-reverse,&.taan-btn-default:hover,&.taan-btn-default:focus{
     color: @main-color;
-    background-color: @lg-color;
+    background-color: @lg-color
+  };
+  &.taan-btn-reverse{
     border-color: @main-color
+  };
+  &.taan-btn-default:hover,&.taan-btn-default:focus{
+    border-color: @lg-color
   }
 }
 nav.navbar {
@@ -350,9 +352,6 @@ h2.dh2.aos-animate::after,
     margin-top: 0
   };
   li{
-    &:not(:first-child){
-      border-left: 1px solid @lgh-color
-    };
     a{
       color: #FFF;
       text-transform: uppercase;
@@ -599,6 +598,14 @@ h2.dh2.aos-animate::after,
     #navbar {
       padding-right: 25px
     };
+    h1.dh1{
+      font-size: 84px;
+
+      &::after{
+        font-size: 56px;
+        line-height: 74px;
+      }
+    }
   }
   header#display{
     height: 455px;
@@ -671,6 +678,14 @@ h2.dh2.aos-animate::after,
             margin-top: 10px
           }
         }
+      }
+    }
+    h1.dh1{
+      font-size: 65px;
+
+      &::after{
+        font-size: 46px;
+        line-height: 61px;
       }
     }
   }
