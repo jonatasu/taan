@@ -12,6 +12,14 @@ AOS.init({
   delay: 300
 });
 
+// Mobile alternative for BS3 taan-tabs
+if($("#membership_mobile_tabs").length !==0){
+  $("#membership_mobile_tabs").on("change", function(){
+    $('.taan-tabs .nav-tabs a[href="'+$(this).val()+'"]').tab('show');
+    $("html, body").scrollTop($("#membership_mobile_tabs").offset().top);
+  });
+}
+
 
 // Set "#wrapper" TOP padding as navbar's height
 if( $(window).width() > 768 ){ $("#wrapper").css("padding-top", navbarHeight+"px"); }
