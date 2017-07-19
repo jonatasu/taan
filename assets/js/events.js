@@ -6,6 +6,5 @@ $(".box_item").on("mouseover", "h2 > a", function(){
 $(".box_item ul li").each(function(){
   if($(this).outerWidth() < ($(this).find("a span").outerWidth() + 60)){
     $(this).append('<span class="etc">&nbsp;...</span>');
-    console.log("appended");
   }
 });
